@@ -4,8 +4,17 @@ using Microsoft.Xna.Framework.Input;
 
 namespace WinnieTerminator
 {
+
+    // TODO Создать класс Entity - базовый для игровых объектов
+    // TODO Создать класс ГГ
+    // TODO Движение ГГ по клавишам вправо и влево
+    // TODO Добавить гравитацию
+    // TODO Установка размера окна (1024х600) и включить отображение курсора мыши
+    // TODO Ландшафт ломаной линией
+    // TODO Коллизия ГГ с ландшафтом
+
     /// <summary>
-    /// This is the main type for your    game.
+    /// This is the main type for your game.
     /// </summary>
     public class Game1 : Game
     {
