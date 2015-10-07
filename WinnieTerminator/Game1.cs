@@ -5,11 +5,10 @@ using Microsoft.Xna.Framework.Input;
 namespace WinnieTerminator
 {
 
-    // TODO Создать класс Entity - базовый для игровых объектов
+    // TODO Создать класс GameObject - базовый для игровых объектов
     // TODO Создать класс ГГ
     // TODO Движение ГГ по клавишам вправо и влево
     // TODO Добавить гравитацию
-    // TODO Установка размера окна (1024х600) и включить отображение курсора мыши
     // TODO Ландшафт ломаной линией
     // TODO Коллизия ГГ с ландшафтом
 
@@ -39,6 +38,9 @@ namespace WinnieTerminator
 
             base.Initialize();
             this.IsMouseVisible = true;
+            graphics.PreferredBackBufferWidth = 1024;
+            graphics.PreferredBackBufferHeight = 600;
+            graphics.ApplyChanges();
         }
 
         /// <summary>
