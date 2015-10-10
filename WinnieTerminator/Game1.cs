@@ -12,6 +12,9 @@ namespace WinnieTerminator
     // TODO Ландшафт ломаной линией
     // TODO Коллизия ГГ с ландшафтом
 
+    // INFO По умолчанию, частота вызова методов Update и Draw равна 30 раз в секунду
+    // Частоту вызова одного и другого метода можно настроить независимо.
+
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
@@ -19,6 +22,8 @@ namespace WinnieTerminator
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        Texture2D image;
 
         public Game1()
         {
@@ -53,6 +58,7 @@ namespace WinnieTerminator
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            image = Content.Load<Texture2D>("Images/winnie");
         }
 
         /// <summary>
@@ -71,12 +77,20 @@ namespace WinnieTerminator
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-
-            // TODO: Add your update logic here
+            // Обработка действий игрока
+            HandleInput(gameTime);
 
             base.Update(gameTime);
+        }
+
+        /// <summary>
+        /// Обработка пользовательского ввода
+        /// </summary>
+        /// <param name="gameTime">текущая порция игрового времени</param>
+        private void HandleInput(GameTime gameTime)
+        {
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+                Exit();
         }
 
         /// <summary>
@@ -89,7 +103,17 @@ namespace WinnieTerminator
 
             // TODO: Add your drawing code here
 
+            DrawHud();
+
             base.Draw(gameTime);
+        }
+
+        /// <summary>
+        /// Отрисовка элементов экранной индикации
+        /// </summary>
+        private void DrawHud()
+        {
+
         }
     }
 }

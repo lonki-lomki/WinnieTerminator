@@ -16,7 +16,12 @@ namespace WinnieTerminator.Core
         /// <summary>
         /// Координаты объекта в игровом мире
         /// </summary>
-        public Point position;
+        public Vector2 position;
+
+        /// <summary>
+        /// Скорость движения объекта
+        /// </summary>
+        Vector2 velocity;
 
         /// <summary>
         /// Текущий поворот объекта
@@ -40,6 +45,12 @@ namespace WinnieTerminator.Core
         public GameObject(string id)
         {
             this.id = id;
+        }
+
+        public Vector2 Position
+        {
+            get { return position; }
+            set { position = value; }
         }
     }
 }
