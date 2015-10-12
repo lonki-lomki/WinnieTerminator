@@ -52,5 +52,11 @@ namespace WinnieTerminator.Core
             get { return position; }
             set { position = value; }
         }
+
+        public Vector2 Velocity
+        {
+            get { return position; }
+            set { position = value; }
+        }
     }
 }

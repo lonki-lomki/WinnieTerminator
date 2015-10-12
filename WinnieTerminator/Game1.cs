@@ -24,7 +24,7 @@ namespace WinnieTerminator
         SpriteBatch spriteBatch;
 
         Texture2D image;
-
+        
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
