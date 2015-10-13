@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 
 namespace WinnieTerminator.Core
@@ -58,5 +59,8 @@ namespace WinnieTerminator.Core
             get { return position; }
             set { position = value; }
         }
+
+        virtual public void Draw(SpriteBatch sb)
+        {  }
     }
 }

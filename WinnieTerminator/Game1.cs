@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using WinnieTerminator.Core;
 
 namespace WinnieTerminator
 {
@@ -24,11 +25,16 @@ namespace WinnieTerminator
         SpriteBatch spriteBatch;
 
         Texture2D image;
+
+        GameData gd;
         
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            gd = GameData.Instance;
+            gd.content = Content;
         }
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace WinnieTerminator
             graphics.PreferredBackBufferWidth = 1024;
             graphics.PreferredBackBufferHeight = 600;
             graphics.ApplyChanges();
+
         }
 
         /// <summary>
@@ -59,6 +66,8 @@ namespace WinnieTerminator
 
             // TODO: use this.Content to load your game content here
             image = Content.Load<Texture2D>("Images/winnie");
+
+            GameData.Instance.player.LoadContent();
         }
 
         /// <summary>
@@ -103,7 +112,13 @@ namespace WinnieTerminator
 
             // TODO: Add your drawing code here
 
+            spriteBatch.Begin(SpriteSortMode.Immediate, null, null, null, null, null, null);
+
+            GameData.Instance.player.Draw(spriteBatch);
+
             DrawHud();
+
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
