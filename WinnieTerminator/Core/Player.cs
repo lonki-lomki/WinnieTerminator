@@ -24,10 +24,11 @@ namespace WinnieTerminator.Core
         {
             picture = GameData.Instance.content.Load<Texture2D>("Images/winnie");
         }
-
+        /*
         override public void Draw(SpriteBatch sb)
         {
             sb.Draw(picture, position, Color.White);
         }
+        */
     }
 }

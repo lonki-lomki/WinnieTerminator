@@ -49,8 +49,8 @@ namespace WinnieTerminator
 
             base.Initialize();
             this.IsMouseVisible = true;
-            graphics.PreferredBackBufferWidth = 1024;
-            graphics.PreferredBackBufferHeight = 600;
+            graphics.PreferredBackBufferWidth = CONST.WIND_WIDTH;
+            graphics.PreferredBackBufferHeight = CONST.WIND_HEIGHT;
             graphics.ApplyChanges();
 
         }
@@ -67,7 +67,7 @@ namespace WinnieTerminator
             // TODO: use this.Content to load your game content here
             image = Content.Load<Texture2D>("Images/winnie");
 
-            GameData.Instance.player.LoadContent();
+            gd.player.LoadContent();
         }
 
         /// <summary>

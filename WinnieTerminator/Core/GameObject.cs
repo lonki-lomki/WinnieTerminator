@@ -20,14 +20,21 @@ namespace WinnieTerminator.Core
         public Vector2 position;
 
         /// <summary>
+        /// Угол поворота объекта в градусах (0 угол - это положительное направление оси Х)
+        /// Положительный угол - поворот по часовой стрелке, отрицательный - против часовой стрелки
+        /// </summary>
+        private float angle = 0.0f;
+
+        /// <summary>
         /// Скорость движения объекта
         /// </summary>
         Vector2 velocity;
 
         /// <summary>
-        /// Текущий поворот объекта
+        /// Флаг, указывающий, действует ли на данный объект гравитация
         /// </summary>
-        protected float rotation;
+        private bool isGravity = true;
+
 
         public List<Component> components = new List<Component>();
         public List<RenderComponent> renderComponents = new List<RenderComponent>();
@@ -60,7 +67,7 @@ namespace WinnieTerminator.Core
             set { position = value; }
         }
 
-        virtual public void Draw(SpriteBatch sb)
-        {  }
+        //virtual public void Draw(SpriteBatch sb)
+        //{  }
     }
 }
