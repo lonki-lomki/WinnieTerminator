@@ -23,6 +23,8 @@ namespace WinnieTerminator.Core
         public void LoadContent()
         {
             picture = GameData.Instance.content.Load<Texture2D>("Images/winnie");
+            //RenderComponent rc = new RenderComponent("player", this, GameData.Instance.game, ref picture);
+            //addComponent(GameData.Instance.game, rc);
         }
         /*
         override public void Draw(SpriteBatch sb)

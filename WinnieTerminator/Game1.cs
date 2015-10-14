@@ -35,6 +35,7 @@ namespace WinnieTerminator
 
             gd = GameData.Instance;
             gd.content = Content;
+            gd.game = this;
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace WinnieTerminator
 
             spriteBatch.Begin(SpriteSortMode.Immediate, null, null, null, null, null, null);
 
-            GameData.Instance.player.Draw(spriteBatch);
+            //GameData.Instance.player.Draw(spriteBatch);
 
             DrawHud();
 

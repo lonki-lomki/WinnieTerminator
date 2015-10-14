@@ -42,6 +42,7 @@
     <Compile Include="Core\Component.cs" />
     <Compile Include="Core\GameData.cs" />
     <Compile Include="Core\GameObject.cs" />
+    <Compile Include="Core\ImageRenderComponent.cs" />
     <Compile Include="Core\Landshaft.cs" />
     <Compile Include="Core\Player.cs" />
     <Compile Include="Core\RenderComponent.cs" />

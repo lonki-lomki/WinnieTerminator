@@ -1,13 +1,11 @@
-﻿
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
 
 namespace WinnieTerminator.Core
 {
     /// <summary>
     /// Базовый класс для компонентов - визуализаторов
     /// </summary>
-    public abstract class RenderComponent : DrawableGameComponent
+    public abstract class RenderComponent : Component
     {
         /// <summary>
         /// Идентификатор компонента
@@ -26,10 +24,9 @@ namespace WinnieTerminator.Core
         /// <param name="owner">объект-владелец</param>
         /// <param name="game"></param>
         /// <param name="image">ссылка на изображение</param>
-        public RenderComponent(string id, GameObject owner, Game game, ref Texture2D image) : base(game)
+        public RenderComponent(string id, GameObject owner) : base(id, owner)
         {
-            this.id = id;
-            this.owner = owner;
+
         }
 
         /// <summary>
@@ -43,5 +40,7 @@ namespace WinnieTerminator.Core
         /// <param name="cam_x">координата Х камеры</param>
         /// <param name="cam_y">координата У камеры</param>
         public abstract void render(int cam_x, int cam_y);
+
+
     }
 }

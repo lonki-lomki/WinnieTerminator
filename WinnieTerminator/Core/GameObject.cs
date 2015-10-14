@@ -67,7 +67,18 @@ namespace WinnieTerminator.Core
             set { position = value; }
         }
 
-        //virtual public void Draw(SpriteBatch sb)
-        //{  }
+        public void addComponent(Component c)
+        {
+            components.Add(c);
+        }
+
+        public void addComponent(RenderComponent rc)
+        {
+            // Добавить компонент в список локальных компонентов отображения
+            renderComponents.Add(rc);
+        }
+
+        virtual public void Draw(SpriteBatch sb)
+        {  }
     }
 }

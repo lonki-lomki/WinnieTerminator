@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 
 namespace WinnieTerminator.Core
@@ -10,6 +11,8 @@ namespace WinnieTerminator.Core
     {
 
         private static GameData instance;
+
+        public Game game;
 
         public Player player;
 
