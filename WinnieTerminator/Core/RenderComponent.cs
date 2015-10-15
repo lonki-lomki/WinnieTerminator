@@ -8,16 +8,6 @@ namespace WinnieTerminator.Core
     public abstract class RenderComponent : Component
     {
         /// <summary>
-        /// Идентификатор компонента
-        /// </summary>
-        public string id;
-
-        /// <summary>
-        /// Объект-владелец данного компонента
-        /// </summary>
-        public GameObject owner;
-
-        /// <summary>
         /// Конструктор
         /// </summary>
         /// <param name="id">идентификатор компонента</param>
@@ -33,6 +23,11 @@ namespace WinnieTerminator.Core
         /// Абстрактный класс для отрисовки связанного игрового объекта
         /// </summary>
         public abstract void render();
+
+
+        public abstract void render(SpriteBatch sb);
+
+
 
         /// <summary>
         /// Абстрактный класс для отрисовки связанного игрового объекта через камеру

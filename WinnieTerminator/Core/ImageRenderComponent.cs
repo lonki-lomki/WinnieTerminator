@@ -1,5 +1,6 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using System;
+﻿using System;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace WinnieTerminator.Core
 {
@@ -14,17 +15,22 @@ namespace WinnieTerminator.Core
         }
         public override void render()
         {
-            throw new NotImplementedException();
+            
+        }
+
+        public override void render(SpriteBatch sb)
+        {
+            sb.Draw(image, owner.Position, Color.White);
         }
 
         public override void render(int cam_x, int cam_y)
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void update(float delta)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

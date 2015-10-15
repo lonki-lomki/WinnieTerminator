@@ -66,7 +66,7 @@ namespace WinnieTerminator
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            image = Content.Load<Texture2D>("Images/winnie");
+            //image = Content.Load<Texture2D>("Images/winnie");
 
             gd.player.LoadContent();
         }
@@ -116,6 +116,11 @@ namespace WinnieTerminator
             spriteBatch.Begin(SpriteSortMode.Immediate, null, null, null, null, null, null);
 
             //GameData.Instance.player.Draw(spriteBatch);
+
+            foreach (RenderComponent rc in gd.player.renderComponents)
+            {
+                rc.render(spriteBatch);
+            }
 
             DrawHud();
 
