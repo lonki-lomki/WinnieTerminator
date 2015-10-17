@@ -1,4 +1,6 @@
 ﻿
+using Microsoft.Xna.Framework;
+
 namespace WinnieTerminator.Core
 {
     /// <summary>
@@ -19,8 +21,8 @@ namespace WinnieTerminator.Core
         /// <summary>
         /// Абстрактный класс обновления состояния компонента
         /// </summary>
-        /// <param name="delta">время, прошедшее после предыдущего вызова этого метода</param>
-        public abstract void update(float delta);
+        /// <param name="gameTime">время, прошедшее после предыдущего вызова этого метода</param>
+        public abstract void update(GameTime gameTime);
 
         /// <summary>
         /// Конструктор

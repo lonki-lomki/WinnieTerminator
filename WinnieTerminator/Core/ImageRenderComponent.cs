@@ -28,9 +28,10 @@ namespace WinnieTerminator.Core
             
         }
 
-        public override void update(float delta)
+        public override void update(GameTime gameTime)
         {
             
         }
+
     }
 }

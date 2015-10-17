@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 using WinnieTerminator.Core;
 
 namespace WinnieTerminator
@@ -26,7 +27,15 @@ namespace WinnieTerminator
 
         Texture2D image;
 
+        /// <summary>
+        /// Для хранения состояния игры
+        /// </summary>
         GameData gd;
+
+        /// <summary>
+        /// Список игровых объектов на сцене
+        /// </summary>
+        List<GameObject> gameObjects = new List<GameObject>();
         
         public Game1()
         {
@@ -36,6 +45,9 @@ namespace WinnieTerminator
             gd = GameData.Instance;
             gd.content = Content;
             gd.game = this;
+
+            // Добавить игрока в список игровых объектов
+            gameObjects.Add(gd.player);
         }
 
         /// <summary>
@@ -90,6 +102,12 @@ namespace WinnieTerminator
             // Обработка действий игрока
             HandleInput(gameTime);
 
+            // Обновление всех игровых объектов
+            foreach (GameObject item in gameObjects)
+            {
+                item.Update(gameTime);
+            }
+
             base.Update(gameTime);
         }
 
@@ -117,9 +135,12 @@ namespace WinnieTerminator
 
             //GameData.Instance.player.Draw(spriteBatch);
 
-            foreach (RenderComponent rc in gd.player.renderComponents)
+            //gd.player.Draw(spriteBatch);
+
+            // Отрисовка всех игровых объектов
+            foreach (GameObject item in gameObjects)
             {
-                rc.render(spriteBatch);
+                item.Draw(spriteBatch);
             }
 
             DrawHud();

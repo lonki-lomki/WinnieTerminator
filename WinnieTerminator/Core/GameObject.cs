@@ -78,7 +78,25 @@ namespace WinnieTerminator.Core
             renderComponents.Add(rc);
         }
 
+        virtual public void Update(GameTime gameTime)
+        {
+            foreach (Component c in components)
+            {
+                c.update(gameTime);
+            }
+
+        }
+
+        /// <summary>
+        /// Отрисовка данного игрового объекта
+        /// </summary>
+        /// <param name="sb">инструмент для отрисовки спрайтов</param>
         virtual public void Draw(SpriteBatch sb)
-        {  }
+        {
+            foreach (RenderComponent rc in renderComponents)
+            {
+                rc.render(sb);
+            }
+        }
     }
 }
