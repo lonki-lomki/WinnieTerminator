@@ -25,6 +25,9 @@ namespace WinnieTerminator.Core
             picture = GameData.Instance.content.Load<Texture2D>("Images/winnie");
             ImageRenderComponent irc = new ImageRenderComponent("player", this, ref picture);
             addComponent(irc);
+
+            KeyboardInputComponent kic = new KeyboardInputComponent("KeyboardInputComponent", this);
+            addComponent(kic);
         }
     }
 }

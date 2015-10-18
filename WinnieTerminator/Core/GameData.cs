@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Input;
 
 namespace WinnieTerminator.Core
 {
@@ -16,6 +17,8 @@ namespace WinnieTerminator.Core
         public Player player;
 
         public ContentManager content;
+
+        public KeyboardState keyboardState;
 
         /// <summary>
         /// Закрытый конструктор

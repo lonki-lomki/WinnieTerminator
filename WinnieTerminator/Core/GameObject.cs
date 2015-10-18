@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 
 namespace WinnieTerminator.Core
@@ -35,7 +36,7 @@ namespace WinnieTerminator.Core
         /// </summary>
         private bool isGravity = true;
 
-
+        
         public List<Component> components = new List<Component>();
         public List<RenderComponent> renderComponents = new List<RenderComponent>();
 

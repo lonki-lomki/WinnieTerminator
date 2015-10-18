@@ -36,7 +36,9 @@ namespace WinnieTerminator
         /// Список игровых объектов на сцене
         /// </summary>
         List<GameObject> gameObjects = new List<GameObject>();
-        
+
+        //private KeyboardState keyboardState;    // Сохранение состояния клавиатуры
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -119,6 +121,9 @@ namespace WinnieTerminator
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+
+            // Получение текущего состояния клавиатуры
+            gd.keyboardState = Keyboard.GetState();
         }
 
         /// <summary>

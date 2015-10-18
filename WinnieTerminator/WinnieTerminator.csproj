@@ -43,7 +43,9 @@
     <Compile Include="Core\GameData.cs" />
     <Compile Include="Core\GameObject.cs" />
     <Compile Include="Core\ImageRenderComponent.cs" />
+    <Compile Include="Core\KeyboardInputComponent.cs" />
     <Compile Include="Core\Landshaft.cs" />
+    <Compile Include="Core\PhysWorld.cs" />
     <Compile Include="Core\Player.cs" />
     <Compile Include="Core\RenderComponent.cs" />
     <Compile Include="Game1.cs" />
