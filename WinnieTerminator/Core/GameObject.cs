@@ -36,6 +36,23 @@ namespace WinnieTerminator.Core
         /// </summary>
         private bool isGravity = true;
 
+        /// <summary>
+        /// Здоровье объекта. Количество пунктов здоровья.
+        /// </summary>
+        private int hp;
+
+        /// <summary>
+        /// Признак того, что объект имеет пункты здоровья
+        /// </summary>
+        private bool hasHP = false;
+
+        /// <summary>
+        /// Время жизни объекта в милисекундах. Значение -999 означает неограниченное время жизни.
+        /// </summary>
+        private float lifeTime = -999.0f;
+
+
+
         
         public List<Component> components = new List<Component>();
         public List<RenderComponent> renderComponents = new List<RenderComponent>();
@@ -66,6 +83,21 @@ namespace WinnieTerminator.Core
         {
             get { return position; }
             set { position = value; }
+        }
+
+        /// <summary>
+        /// Изменить скорость объекта
+        /// </summary>
+        /// <param name="diff">добавка к скорости</param>
+        virtual public void addVelocity(Vector2 diff)
+        {
+            velocity.X += diff.X;
+            velocity.Y += diff.Y;
+        }
+
+        public bool hasGravity()
+        {
+            return isGravity;
         }
 
         public void addComponent(Component c)
