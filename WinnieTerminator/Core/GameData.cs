@@ -20,12 +20,19 @@ namespace WinnieTerminator.Core
 
         public KeyboardState keyboardState;
 
+        public PhysWorld world;
+
         /// <summary>
         /// Закрытый конструктор
         /// </summary>
         private GameData()
         {
+            // Создать физический мир
+            world = new PhysWorld();
+            // Создать игрока
             player = new Player();
+            // Добавить игрока в физический мир
+            world.Add(player);
         }
 
         /// <summary>

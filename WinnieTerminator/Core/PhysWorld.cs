@@ -39,6 +39,7 @@ namespace WinnieTerminator.Core
                 // TODO Необходимо учесть ограничение максимальной скорости (может быть не надо?)
                 Vector2 currVelocity = item.Velocity;
 
+                /*
                 if (currVelocity.X >= allForces.X)
                 {
                     // Скорость больше максимально возможной - уменьшаем
@@ -60,15 +61,16 @@ namespace WinnieTerminator.Core
                     // Скорость меньше - увеличиваем
                     currVelocity.Y += (allForces.Y - currVelocity.Y) * delta / 1000;
                 }
+                */
 
                 // Скорость вычислена.
                 item.Velocity = new Vector2(currVelocity.X, currVelocity.Y);
 
                 // Добавить ускорение свободного падения
-                item.addVelocity(new Vector2(0.0f, 0 - gravityForce * delta / 1000));
+                item.addVelocity(new Vector2(0.0f, gravityForce * delta / 1000));
 
                 // 3. Рассчитать новое положение объекта
-                //item.Update(gameTime);
+                item.Update(gameTime);
             }
         }
     }

@@ -113,6 +113,11 @@ namespace WinnieTerminator.Core
 
         virtual public void Update(GameTime gameTime)
         {
+            float delta = (float) gameTime.ElapsedGameTime.TotalMilliseconds;
+            // delta - (в милисекундах) время, прошедшее после прошлого запуска функции
+            position = new Vector2(position.X + (velocity.X / 1000.0f) * delta, position.Y + (velocity.Y / 1000.0f) * delta);
+
+            // Обновить состояния компонентов этого объекта
             foreach (Component c in components)
             {
                 c.update(gameTime);

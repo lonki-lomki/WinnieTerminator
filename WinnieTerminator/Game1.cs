@@ -105,10 +105,15 @@ namespace WinnieTerminator
             HandleInput(gameTime);
 
             // Обновление всех игровых объектов
+            /*
             foreach (GameObject item in gameObjects)
             {
                 item.Update(gameTime);
             }
+            */
+
+            // Обновление физического мира
+            gd.world.Update(gameTime);
 
             base.Update(gameTime);
         }
