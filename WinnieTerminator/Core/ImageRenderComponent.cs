@@ -1,7 +1,5 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
 namespace WinnieTerminator.Core
 {
@@ -24,9 +22,9 @@ namespace WinnieTerminator.Core
             sb.Draw(image, owner.Position, Color.White);
         }
 
-        public override void render(int cam_x, int cam_y)
+        public override void render(SpriteBatch sb, float cam_x, float cam_y)
         {
-            
+            sb.Draw(image, new Vector2(owner.Position.X - cam_x, owner.Position.Y - cam_y), Color.White);
         }
 
         public override void update(GameTime gameTime)

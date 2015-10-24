@@ -1,5 +1,4 @@
-﻿
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 
 namespace WinnieTerminator.Core
 {
@@ -61,13 +60,29 @@ namespace WinnieTerminator.Core
 
         /// <summary>
         /// Переместить камеру относительно указанного игрового объекта
+        /// (камера должна держать объект в центре)
+        /// TODO сделать инерцию в перемещении камеры
         /// </summary>
         /// <param name="obj">игровой объект</param>
         public void setPosition(GameObject obj)
         {
-            //
+            // Получить предварительную координату камеры
+            float tmp_x = obj.Position.X - width/2;
+            // TODO координату У не проверяем и не меняем - принимаем высоту игрового мира равной высоте камеры
+            //float tmp_y = obj.Position.Y - height/2;
+
+            // Проверка выхода за пределы размеров игрового мира
+            if (tmp_x < 0)
+            {
+                tmp_x = 0;
+            }
+            if (tmp_x > (CONST.WORLD_WIDTH - width))
+            {
+                tmp_x = CONST.WORLD_WIDTH - width;
+            }
+
+            // Установка новой позиции камеры
+            setPosition(new Vector2(tmp_x, 0));
         }
-
-
     }
 }

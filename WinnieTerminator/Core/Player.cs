@@ -1,5 +1,4 @@
-﻿
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace WinnieTerminator.Core
@@ -15,6 +14,7 @@ namespace WinnieTerminator.Core
         {
             //LoadContent();
             position = new Vector2(100f, 100f);
+            //setGravity(false);
         }
 
         /// <summary>

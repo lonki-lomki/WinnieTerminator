@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 
 namespace WinnieTerminator.Core
@@ -100,6 +99,11 @@ namespace WinnieTerminator.Core
             return isGravity;
         }
 
+        public void setGravity(bool value)
+        {
+            isGravity = value;
+        }
+
         public void addComponent(Component c)
         {
             components.Add(c);
@@ -133,7 +137,7 @@ namespace WinnieTerminator.Core
         {
             foreach (RenderComponent rc in renderComponents)
             {
-                rc.render(sb);
+                rc.render(sb, GameData.Instance.camera.position.X, GameData.Instance.camera.position.Y);
             }
         }
     }

@@ -22,6 +22,8 @@ namespace WinnieTerminator.Core
 
         public PhysWorld world;
 
+        public Camera camera;
+
         /// <summary>
         /// Закрытый конструктор
         /// </summary>
@@ -33,6 +35,8 @@ namespace WinnieTerminator.Core
             player = new Player();
             // Добавить игрока в физический мир
             world.Add(player);
+            // Создать камеру
+            camera = new Camera(CONST.WIND_WIDTH, CONST.WIND_HEIGHT);
         }
 
         /// <summary>

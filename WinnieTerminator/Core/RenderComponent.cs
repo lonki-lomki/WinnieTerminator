@@ -34,7 +34,7 @@ namespace WinnieTerminator.Core
         /// </summary>
         /// <param name="cam_x">координата Х камеры</param>
         /// <param name="cam_y">координата У камеры</param>
-        public abstract void render(int cam_x, int cam_y);
+        public abstract void render(SpriteBatch sb, float cam_x, float cam_y);
 
 
     }
