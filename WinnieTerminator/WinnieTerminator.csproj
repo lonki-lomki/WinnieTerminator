@@ -40,6 +40,7 @@
   <ItemGroup>
     <Compile Include="CONST.cs" />
     <Compile Include="Core\Camera.cs" />
+    <Compile Include="Core\ColliderComponent.cs" />
     <Compile Include="Core\Component.cs" />
     <Compile Include="Core\GameData.cs" />
     <Compile Include="Core\GameObject.cs" />
