@@ -49,6 +49,7 @@
     <Compile Include="Core\Landshaft.cs" />
     <Compile Include="Core\PhysWorld.cs" />
     <Compile Include="Core\Player.cs" />
+    <Compile Include="Core\RectColliderComponent.cs" />
     <Compile Include="Core\RenderComponent.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Logger.cs" />

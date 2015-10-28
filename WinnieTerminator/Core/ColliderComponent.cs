@@ -12,7 +12,7 @@ namespace WinnieTerminator.Core
         /// (пассивный коллайдер сам не проверяет факт коллизии. Например, ландшафт, 
         /// он сам не перемещается и его коллизии проверять не надо. Игровые же объекты - активные.)
         /// </summary>
-        private bool isActiveCollider = false;
+        protected bool isActiveCollider = false;
 
 
         public ColliderComponent(string id, GameObject owner) : base(id, owner)
@@ -23,6 +23,14 @@ namespace WinnieTerminator.Core
         public override void update(GameTime gameTime)
         {
 
+        }
+
+        public abstract bool IsActiveCollider
+        {
+            //get { return isActiveCollider; }
+            //set { isActiveCollider = value; }
+            get;
+            set;
         }
 
     }
