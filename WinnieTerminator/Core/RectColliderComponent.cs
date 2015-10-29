@@ -17,5 +17,15 @@ namespace WinnieTerminator.Core
             get { return isActiveCollider; }
             set { isActiveCollider = value; }
         }
+
+        public override bool IsCollideWith(Point point)
+        {
+            return false;
+        }
+
+        public override bool IsCollideWith(Rectangle rect)
+        {
+            return false;
+        }
     }
 }

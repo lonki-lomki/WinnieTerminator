@@ -33,5 +33,10 @@ namespace WinnieTerminator.Core
             set;
         }
 
+        public abstract bool IsCollideWith(Rectangle rect);
+
+        public abstract bool IsCollideWith(Point point);
+
+
     }
 }
