@@ -50,6 +50,11 @@ namespace WinnieTerminator.Core
         /// </summary>
         private float lifeTime = -999.0f;
 
+        /// <summary>
+        /// Размер объекта в пикселах
+        /// </summary>
+        private Vector2 size;
+
 
 
         
@@ -70,6 +75,7 @@ namespace WinnieTerminator.Core
         public GameObject(string id)
         {
             this.id = id;
+            size = new Vector2(0.0f, 0.0f);
         }
 
         public Vector2 Position
@@ -102,6 +108,12 @@ namespace WinnieTerminator.Core
         public void setGravity(bool value)
         {
             isGravity = value;
+        }
+
+        public Vector2 Size
+        {
+            get { return size; }
+            set { size = value; }
         }
 
         public void addComponent(Component c)

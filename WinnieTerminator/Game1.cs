@@ -39,6 +39,8 @@ namespace WinnieTerminator
 
         //private KeyboardState keyboardState;    // Сохранение состояния клавиатуры
 
+        GameObject platform;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -50,6 +52,11 @@ namespace WinnieTerminator
 
             // Добавить игрока в список игровых объектов
             gameObjects.Add(gd.player);
+
+            // Создать платформу
+            platform = new GameObject("Platform1");
+
+            gameObjects.Add(platform);
         }
 
         /// <summary>
@@ -83,6 +90,17 @@ namespace WinnieTerminator
             //image = Content.Load<Texture2D>("Images/winnie");
 
             gd.player.LoadContent();
+
+            Texture2D t = Content.Load<Texture2D>("Images/platform");
+            ImageRenderComponent irc = new ImageRenderComponent("platform", platform, ref t);
+            platform.addComponent(irc);
+
+            // Установить размер объекта
+            platform.Size = new Vector2(t.Width, t.Height);  // TODO может быть перенести в конструктор компонента?
+
+            platform.Position = new Vector2(50.0f, 400.0f);
+
+
         }
 
         /// <summary>

@@ -2,6 +2,9 @@
 
 namespace WinnieTerminator.Core
 {
+    /// <summary>
+    /// Контроль коллизий объекта, представленного прямоугольной областью
+    /// </summary>
     class RectColliderComponent : ColliderComponent
     {
 
@@ -20,12 +23,16 @@ namespace WinnieTerminator.Core
 
         public override bool IsCollideWith(Point point)
         {
+            if ((point.X >= rect.X && point.X <= (rect.X+rect.Width)) && (point.Y >= rect.Y && point.Y <= (rect.Y + rect.Height)))
+            {
+                return true;
+            }
             return false;
         }
 
         public override bool IsCollideWith(Rectangle rect)
         {
-            return false;
+            return this.rect.Intersects(rect);
         }
     }
 }

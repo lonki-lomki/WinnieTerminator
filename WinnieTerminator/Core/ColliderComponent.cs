@@ -33,8 +33,18 @@ namespace WinnieTerminator.Core
             set;
         }
 
+        /// <summary>
+        /// Проверка пересечения данного объекта с другим объектом, у которого коллайдер представлен прямоугольной областью
+        /// </summary>
+        /// <param name="rect">прямоугольная область другого объекта</param>
+        /// <returns></returns>
         public abstract bool IsCollideWith(Rectangle rect);
 
+        /// <summary>
+        /// Проверка пересечения данного объекта с другим объектом, у которого коллайдер представлен одиночной точкой
+        /// </summary>
+        /// <param name="point">координаты одинокой точки</param>
+        /// <returns></returns>
         public abstract bool IsCollideWith(Point point);
 
 
